@@ -17,13 +17,7 @@ app.use(`/api/v1/ip`, (_req, res, next) => {
         }
       }
     }
-    if(results["eth0"] === undefined) {
-      // wifi
-      res.status(200).json({data: results["en0"][0]});
-    } else {
-      // ethernet
-      res.status(200).json({data: results["eth0"][0]});
-    }
+    res.status(200).json({data: results});
   } catch(err) {
     next(err);
   }
