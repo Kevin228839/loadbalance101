@@ -2,8 +2,14 @@
 
 # download nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
-source ~/.bashrc
+# source nvm
+. /.nvm/nvm.sh
+# install node
 nvm install node
+#export NVM dir
+export NVM_DIR="/.nvm"	
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"	
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" 
 
 #upgrade yum
 sudo yum upgrade
@@ -19,4 +25,4 @@ sudo chmod -R 755 .
 #install node module
 npm install
 # start the app
-node index.js &
+node app.js > app.out.log 2> app.err.log < /dev/null &
