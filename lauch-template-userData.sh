@@ -24,4 +24,4 @@ sudo chmod -R 755 .
 #install node module
 npm install
 # start the app
-node index.js
+node index.js &
